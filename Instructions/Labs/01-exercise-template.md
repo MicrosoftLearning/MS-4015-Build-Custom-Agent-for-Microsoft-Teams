@@ -136,9 +136,9 @@ In this task you will create the custom agent and test the agent.
    
 **Note** ensure all your text is in between quotation marks.
    
-7. **File** > **Save all**
+6. **File** > **Save all**
     
-8. Press **Ctrl+Shift+d** on your keyboard an a dropdown at the top left  will appear that has a green play button and the word Debug > Select the dropdown> select **Debug in Microsoft 365 Agents Playground** > Press **F5**.
+7. Press **Ctrl+Shift+d** on your keyboard an a dropdown at the top left  will appear that has a green play button and the word Debug > Select the dropdown> select **Debug in Microsoft 365 Agents Playground** > Press **F5**.
 8.Custom engine agent runs within the Debugging tool you have chosen, which opens in your browser. 
 9. Navigate back to the VS Code window for your app. Select the **Debug** button dropdown and select **Debug in Teams (Edge)** then press **F5** or the gren play button.
 10. A new window in your Edge browser will open. You may or may not be prompted to sign in. Use the login information provided to sign in. After successfully signing in, close the window.
