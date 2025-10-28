@@ -1,6 +1,6 @@
 
 lab:
-'Create a Custom Agent'
+'Create a Custom Agent with Microsoft 365 Agents SDK'
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
@@ -55,9 +55,9 @@ Select **Next**.
 In this task, you will learn how to implement RAG using a data source for your own test environment.
 
 1. In the page for your newley created Azure OpenAI resource, click **Go to Azure AI Foundry portal** in the ribbon at the top of the page.
-2. In the new page titled **Chat playground**, under **Setup**, select **+ Create new deployment** > **From base models**.
-3. In the pop up window titled **Select a chat completion model** scroll down and select the option **gpt-4o** > **Confirm**.
-4. In the **Deploy model gtp-4o** window, leave everything in it's default setting and select **Deploy**.
+2. On the left hand side, under **Playgrounds**, select **Chat**. Now under page **Chat playground**, in the section called **Setup**, select **+ Create new deployment** .
+3. In the pop up window titled **Select a chat completion model** scroll down and select the option **gpt-4** > **Confirm**.
+4. In the **Deploy model gtp-4** window, leave everything in it's default setting and select **Deploy**.
 5. In the **Chat playground** page, select **Add your data** located near the bottom of the screen > **+ Add a data source**.
 6. In the **Select or add data source** window, select  the dropdown for **Select data source** and select **Upload files (preview)**.
 7. In the next page for **Data source**, ensure the dropdown for **Select data source** is set to **Upload files (preview)**
@@ -90,27 +90,27 @@ In this task, you will learn how to implement RAG using a data source for your o
 In this task you will create the custom agent and test the agent.
 
 1. Open **Visual Studio Code**.
-2. In the right hand side of the visual studio code window select the **Teams Toolkit** icon > select **Create a New App** > in the dropdown select **Custom Engine Agent** (note: depending on the Teams Toolkit version, you may have to select **Custom Copilot**) > **Basic AI Chatbot** > **JavaScript** > **Azure OpenAI** .
+2. In the right hand side of the visual studio code window select **View** in the ribbon above > **Extensions** > search for **Microsoft 356 Agents Toolkit** > select **Update** > **Restart Extensions** > select **Create a New Agent/App** > in the dropdown select **Custom Engine Agent**  > **Basic Custom Engine Agent** > **JavaScript** > **Azure OpenAI** . **Note** you may have to close out of VS code and reopen after updating the toolkit.
 3. In the blank box at the top of the screen, first enter :
 
    a. **API Key** from the previous task > **Enter**.
 
    b. **Endpoint** from the previous task > **Enter**.
 
-   c. For **Azure Open AI deployment name** type in **gpt-4o** > **Enter**.
+   c. For **Azure Open AI deployment name** type in **gpt-4** > **Enter** > **JavaScript**. 
 
    d. For **Choose the folder where your project room folder will be located**, select **Default folder**.
 
    e. For **Input application name** type in any name > **Enter**> in the pop up window select **Yes, I trust the authors**.
 
-   f. In the new VS Code window of the newly created app from steps a-f above, navigate to the **Teams Toolkit** icon on the left hand side of the screen.
+   f. In the new VS Code window of the newly created app from steps a-f above, navigate to the **M365 Toolkit** icon on the left hand side of the screen.
 
    **Note:** steps g-i should be for completed for a user's environment that does not have admin access to the Microsoft Teams Admin Center and/or for Learner's using the provided lab environment.
   For Learners with their own environments, perform steps j-m instead.
 
    g. Under the **Accounts** section, click **Sign in to Microsoft 365**. A new window in your browser will open. Login using the credentials provided.
 
-   h. Navigate back to the VS Code page of your app. You should now see a green check mark by the words **Custom App Upload Enabled** under **Accounts.
+   h. Navigate back to the VS Code page of your agent. You should now see a green check mark by the words **Custom App Upload Enabled** under **Accounts.
 
    i. Under the **Accounts** section, click **Sign in to Azure**. Click **OK** on every pop up window. A new window in your browser will open. Login using the credentials provided.
 
@@ -123,52 +123,28 @@ In this task you will create the custom agent and test the agent.
    l. Select the **Global (Org-wide default)** policy, and then turn on the **Upload custom apps** toggle.
 
    m. Scroll down and select the **Save** button to save your changes. Your tenant will now allow custom app sideloading. 
+
+4. Navigate to **src/config.js** file under prompts/chat in the VS Code window of your app. Delete all the text that follows **azureOpenAIKey:**, **azureOpenAIEnpoint:**, and **azureOpenAIDeploymentName:**.
+
+5. After completing the above, replace the the text you deleted after the **:** with the values you saved from the previous task (note: the values must be in quotation marks):
+
+   a. **azureOpenAIKey** is the **API Key** from the previous task.
+
+   b. **azureOpenAIEndpoint** is the **Endpoint** from the previous task.
    
-4. Navigate to **src/prompts/chat/skprompt.txt** in the VS Code window of your app. Delete any text in the file and paste the following:
- "The following is a conversation with an AI assistant, who is an expert on answering questions over the given context. 
-
-Responses should be in a short journalistic style with no more than 80 words." 
-
-5. Navigate to **config.json** file under prompts/chat in the VS Code window of your app. Delete the code currently present in the brackets and paste the following code in the brackets.
-
-```json
-"data_sources": [ 
-    { 
-        "type": "azure_search", 
-        "parameters": { 
-            "endpoint": "AZURE-AI-SEARCH-ENDPOINT", 
-            "index_name": "YOUR-INDEX_NAME",
-            "in_scope": false,
-            "authentication": { 
-                "type": "api_key", 
-                "key": "AZURE-AI-SEARCH-KEY" 
-            } 
-        } 
-    } 
-]
-```
-
-6. In the code above, replace the following with the values you saved from the previous task (note: the values must be in quotation marks):
-
-   a. **AZURE-AI-SEARCH-ENDPOINT** is the **Endpoint** from the previous task.
-
-   b. **index_name**  is the **Index name** from Task 2 step 11 in the previous task.
-
-   c. **key** is the **Azure Search Resource Key** from the previous task.
-
-7. Go to **src/app/app.js file** and add the following variable inside **OpenAIModel** right after the line azureEndpoint: config.azureOpenAIEndpoint, : 
-
-    a. azureApiVersion: '2024-02-15-preview',
+   c. **azureOpenAIDeploymentName** type in **"gpt-4"**
    
-8. **File** > **Save all**
+**Note** ensure all your text is in between quotation marks.
+   
+7. **File** > **Save all**
     
-9. Press **Ctrl+Shift+d** on your keyboard an a dropdown at the top left  will appear that has a green play button and the word Debug > Select the dropdown> select **Debug in Test Tool** > Press **F5**.
-10.Custom engine agent runs within the Debugging tool you have chosen, which opens in your browser. You can ask the bot any questions pertaining to the RAG data uploaded in Task 2 step 12.
-11. Navigate back to the VS Code window for your app. Select the **Debug** button dropdown and select **Debug in Teams (Edge)** then press **F5** or the gren play button.
-13. A new window in your Edge browser will open. You will be prompted to sign in. Use the login information provided to sign in. After successfully signing in, close the window.
-14. Repeat step 11 again. There should be a window with the title of your newly created app. Select **Add** > **Open**.
-15. Congrats! You can now ask the agent any question pertaining to the RAG data files.
-16. **Note:** For Learners completing this lab on their own environment, this agent was made for educational purposes using your own subscription, users should proceed with deleting the agent after completion of this lab. To delete a custom agent in Microsoft Teams, you can:
+8. Press **Ctrl+Shift+d** on your keyboard an a dropdown at the top left  will appear that has a green play button and the word Debug > Select the dropdown> select **Debug in Microsoft 365 Agents Playground** > Press **F5**.
+8.Custom engine agent runs within the Debugging tool you have chosen, which opens in your browser. 
+9. Navigate back to the VS Code window for your app. Select the **Debug** button dropdown and select **Debug in Teams (Edge)** then press **F5** or the gren play button.
+10. A new window in your Edge browser will open. You may or may not be prompted to sign in. Use the login information provided to sign in. After successfully signing in, close the window.
+11. There should be a window with the title of your newly created app. Select **Add** > **Open**.
+12. Congrats! You can now ask the agent any question pertaining to the RAG data files.
+13. **Note:** For Learners completing this lab on their own environment, this agent was made for educational purposes using your own subscription, users should proceed with deleting the agent after completion of this lab. To delete a custom agent in Microsoft Teams, you can:
 - Select the agent you want to delete, then choose the **More options icon (…)** and select **Delete**.
 - Remove the agent from a chat by selecting the ellipses in the thread and choosing **Manage Apps**.
 - From the authoring experience of an agent, select the **ellipses (...)** and choose **Delete**.- From the authoring experience of an agent, select the **ellipses (...)** and choose **Delete**.
