@@ -1,6 +1,6 @@
 
 lab:
-'Create a Custom Agent with Microsoft 365 Agents SDK'
+'Create a custom engine agent with Microsoft 365 Agents SDK'
 ---
 <!--
 Edit the metadata above to manage the list of exercises in the home page of the GitHub site that gets generated.
