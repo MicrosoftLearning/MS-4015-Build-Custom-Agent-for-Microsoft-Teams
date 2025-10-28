@@ -151,5 +151,3 @@ In this task you will create the custom agent and test the agent.
 
 **END OF LAB**
 
-
-**END OF LAB**
