@@ -56,7 +56,7 @@ In this task, you will learn how to implement RAG using a data source for your o
 
 1. In the page for your newley created Azure OpenAI resource, click **Go to Azure AI Foundry portal** in the ribbon at the top of the page.
 2. On the left hand side, under **Playgrounds**, select **Chat**. Now under page **Chat playground**, in the section called **Setup**, select **+ Create new deployment** .
-3. In the pop up window titled **Select a chat completion model** scroll down and select the option **gpt-4** > **Confirm**.
+3. In the pop up window titled **Select a chat completion model** scroll down and select the option **gpt-4o** > **Confirm**.
 4. In the **Deploy model gtp-4** window, leave everything in it's default setting and select **Deploy**.
 5. In the **Chat playground** page, select **Add your data** located near the bottom of the screen > **+ Add a data source**.
 6. In the **Select or add data source** window, select  the dropdown for **Select data source** and select **Upload files (preview)**.
@@ -97,7 +97,7 @@ In this task you will create the custom agent and test the agent.
 
    b. **Endpoint** from the previous task > **Enter**.
 
-   c. For **Azure Open AI deployment name** type in **gpt-4** > **Enter** > **JavaScript**. 
+   c. For **Azure Open AI deployment name** type in **gpt-4o** > **Enter** > **JavaScript**. 
 
    d. For **Choose the folder where your project room folder will be located**, select **Default folder**.
 
@@ -132,7 +132,7 @@ In this task you will create the custom agent and test the agent.
 
    b. **azureOpenAIEndpoint** is the **Endpoint** from the previous task.
    
-   c. **azureOpenAIDeploymentName** type in **"gpt-4"**
+   c. **azureOpenAIDeploymentName** type in **"gpt-4o"**
    
 **Note** ensure all your text is in between quotation marks.
    
