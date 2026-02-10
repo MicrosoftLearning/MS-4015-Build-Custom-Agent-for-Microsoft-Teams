@@ -90,14 +90,16 @@ In this task, you will learn how to implement RAG using a data source for your o
 In this task you will create the custom agent and test the agent.
 
 1. Open **Visual Studio Code**.
-2. In the right hand side of the visual studio code window select **View** in the ribbon above > **Extensions** > search for **Microsoft 356 Agents Toolkit** > select **Update** > **Restart Extensions** > select **Create a New Agent/App** > in the dropdown select **Custom Engine Agent**  > **Basic Custom Engine Agent** > **JavaScript** > **Azure OpenAI** . **Note** you may have to close out of VS code and reopen after updating the toolkit.
+2. In the right hand side of the visual studio code window select **View** in the ribbon above > **Extensions** > search for **Microsoft 356 Agents Toolkit** > select **Update** > **Restart Extensions** > select **Create a New Agent/App** > in the dropdown select **Custom Engine Agent**  > **Basic Custom Engine Agent** > **Azure OpenAI** . 
+
+**Note** you may have to close out of VS code and reopen after updating the toolkit.
 3. In the blank box at the top of the screen, first enter :
 
    a. **API Key** from the previous task > **Enter**.
 
    b. **Endpoint** from the previous task > **Enter**.
 
-   c. For **Azure Open AI deployment name** type in **gpt-4** > **Enter** > **JavaScript**. 
+   c. For **Azure Open AI deployment name** type in **gpt-4o** > **Enter** > **JavaScript**. 
 
    d. For **Choose the folder where your project room folder will be located**, select **Default folder**.
 
@@ -143,7 +145,7 @@ In this task you will create the custom agent and test the agent.
 9. Navigate back to the VS Code window for your app. Select the **Debug** button dropdown and select **Debug in Teams (Edge)** then press **F5** or the gren play button.
 10. A new window in your Edge browser will open. You may or may not be prompted to sign in. Use the login information provided to sign in. After successfully signing in, close the window.
 11. There should be a window with the title of your newly created app. Select **Add** > **Open**.
-12. Congrats! You can now ask the agent any question pertaining to the RAG data files.
+12. Congrats! You can now test your agent by asking questions.
 13. **Note:** For Learners completing this lab on their own environment, this agent was made for educational purposes using your own subscription, users should proceed with deleting the agent after completion of this lab. To delete a custom agent in Microsoft Teams, you can:
 - Select the agent you want to delete, then choose the **More options icon (…)** and select **Delete**.
 - Remove the agent from a chat by selecting the ellipses in the thread and choosing **Manage Apps**.
